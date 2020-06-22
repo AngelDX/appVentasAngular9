@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { ToastrModule } from 'ngx-toastr';
+
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
@@ -32,7 +36,10 @@ import { AdministradorComponent } from './web/administrador/administrador.compon
     AppRoutingModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    CommonModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot() // ToastrModule added
   ],
   providers: [],
   bootstrap: [AppComponent]
