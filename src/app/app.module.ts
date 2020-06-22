@@ -14,6 +14,7 @@ import { ContactoComponent } from './web/contacto/contacto.component';
 import { LoginComponent } from './web/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { from } from 'rxjs';
+import { AdministradorComponent } from './web/administrador/administrador.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { from } from 'rxjs';
     HomeComponent,
     ProductosComponent,
     ContactoComponent,
-    LoginComponent
+    LoginComponent,
+    AdministradorComponent
   ],
   imports: [
     BrowserModule,
