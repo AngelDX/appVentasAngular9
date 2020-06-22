@@ -1,0 +1,12 @@
+<h1>Home</h1>
+<p>Mi nombre es: {{ nombre | lowercase}}</p>
+<h2>Tengo: {{ edad }} años</h2>
+<h2>Soy soltero: {{ soltero }}</h2>
+<h2>Mis habilidades son: {{ habilidades }}</h2>
+<h2>Mi cumpleaños es el: {{ cumple | date:"MM/dd/yyyy"}}</h2>
+<h2>Costo del servicio: {{ precio | currency:"S/. "}}</h2>
+<form action="">
+    
+    <input type="text" name="nom" [(ngModel)]="persona.nom">
+    <input type="text" name="nom" [(ngModel)]="persona.nom">
+</form>

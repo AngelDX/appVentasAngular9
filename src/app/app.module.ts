@@ -1,16 +1,36 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from '../environments/environment';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { EmpresaComponent } from './web/empresa/empresa.component';
+import { HomeComponent } from './web/home/home.component';
+import { ProductosComponent } from './web/productos/productos.component';
+import { ContactoComponent } from './web/contacto/contacto.component';
+import { LoginComponent } from './web/login/login.component';
+import { FormsModule } from '@angular/forms';
+import { from } from 'rxjs';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EmpresaComponent,
+    HomeComponent,
+    ProductosComponent,
+    ContactoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
