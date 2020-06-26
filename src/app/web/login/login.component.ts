@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/administrador']);
     }).catch((err)=>{
       console.log(err);
-      this.toastr.success('Acceso incorrecto...');
+      this.toastr.error('Acceso incorrecto...');
     })
   }
 }
