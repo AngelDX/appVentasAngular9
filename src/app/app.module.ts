@@ -9,6 +9,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 
+import { ChartsModule } from 'ng2-charts';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmpresaComponent } from './web/empresa/empresa.component';
@@ -39,7 +41,8 @@ import { AdministradorComponent } from './web/administrador/administrador.compon
     AngularFireAuthModule,
     CommonModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot() // ToastrModule added
+    ToastrModule.forRoot(), // ToastrModule added
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
