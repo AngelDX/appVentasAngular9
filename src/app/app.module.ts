@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { ToastrModule } from 'ngx-toastr';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
@@ -21,6 +22,9 @@ import { LoginComponent } from './web/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { from } from 'rxjs';
 import { AdministradorComponent } from './web/administrador/administrador.component';
+import { CatalogoComponent } from './catalogo/catalogo.component';
+import { ProductoAddComponent } from './catalogo/producto-add/producto-add.component';
+import { ProductoListComponent } from './catalogo/producto-list/producto-list.component';
 
 
 @NgModule({
@@ -31,7 +35,10 @@ import { AdministradorComponent } from './web/administrador/administrador.compon
     ProductosComponent,
     ContactoComponent,
     LoginComponent,
-    AdministradorComponent
+    AdministradorComponent,
+    CatalogoComponent,
+    ProductoAddComponent,
+    ProductoListComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +49,8 @@ import { AdministradorComponent } from './web/administrador/administrador.compon
     CommonModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
-    ChartsModule
+    ChartsModule, //Libreria para jchart
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

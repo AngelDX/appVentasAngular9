@@ -1,1 +1,18 @@
-<p>productos works!</p>
+<h3>Lista de productos</h3>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Titulo</th>
+        <th scope="col">Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pro of pokemons.results">
+        <th scope="row">{{ pro.name }}</th>
+        <td>{{ pro.url }}</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table> 
+

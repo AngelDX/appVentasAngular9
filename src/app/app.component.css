@@ -3,3 +3,8 @@ footer{
     color: blanchedalmond;
     padding: 20px 10px 10px 10px;
 }
+
+.contenedor{
+    width: 90%;
+    margin: 0 auto;
+}
