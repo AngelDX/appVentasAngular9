@@ -29,4 +29,18 @@ export class CatalogoService {
     });
   }
 
+  deleteProducto($key: string){
+    this.productoList.remove($key)
+  }
+
+  updateproducto(producto: Catalogo){
+    this.productoList.update(producto.$key,{
+      nombre:producto.nombre,
+      categoria:producto.categoria,
+      precio: producto.precio,
+      cantidad: producto.cantidad,
+      total: producto.precio*producto.cantidad
+    });
+  }
+
 }

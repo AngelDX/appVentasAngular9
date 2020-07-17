@@ -1,25 +1,32 @@
 <div class="card border-success mb-3">
     <div class="card-header"><h4>Lista de Productos</h4></div>
     <div class="card-body">
-        <table class="table table-hover responsive">
+        <table class="table table-hover table-striped">
             <thead>
             <tr>
-                <th scope="col">ID</th>
+                <th scope="col">#</th>
                 <th scope="col">NOMBRE</th>
                 <th scope="col">CATEGORIA</th>
                 <th scope="col">PRECIO</th>
                 <th scope="col">CANTIDAD</th>
                 <th scope="col">TOTAL</th>
+                <th colspan="2">OPCIONES</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+            <tr *ngFor="let item of catalogoList; let i = index">
+                <td>{{ i+1 }}</td>
+                <td>{{ item.nombre }}</td>
+                <td>{{ item.categoria }}</td>
+                <td>{{ item.precio }}</td>
+                <td>{{ item.cantidad }}</td>
+                <td>{{ item.total }}</td>
+                <td>
+                    <a class="btn btn-success" (click)="onEdit(item)">Editar</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger" (click)="onDelete(item.$key)">Borrar</a>
+                </td>
             </tr>
             </tbody>
         </table> 

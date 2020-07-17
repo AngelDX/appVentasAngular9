@@ -18,9 +18,14 @@ export class ProductoAddComponent implements OnInit {
   }
 
   onSubmit(productosForm: NgForm){
-    this.catalogoService.insertProducto(productosForm.value);
+    if(productosForm.value.$key==null){
+      this.catalogoService.insertProducto(productosForm.value);
+      this.toastr.success('El producto se inserto con exito...');
+    }else{
+      this.catalogoService.updateproducto(productosForm.value);
+      this.toastr.success('El producto se actualizó con exito...');
+    }
     this.resetForm(productosForm);
-    this.toastr.success('El producto se inserto con exito...');
   }
 
   resetForm(productosForm: NgForm){

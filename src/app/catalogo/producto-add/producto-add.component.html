@@ -2,6 +2,7 @@
     <div class="card-header"><h4>Agregar Producto</h4></div>
     <div class="card-body">
         <form #productosForm="ngForm" (ngSubmit)="onSubmit(productosForm)">
+            <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="catalogoService.selectProducto.$key">
             <div class="form-group">
                 <label>Nombre Producto</label>
                 <input type="text" class="form-control" placeholder="Agregar producto"
