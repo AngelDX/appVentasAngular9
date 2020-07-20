@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CatalogoService } from 'src/app/services/catalogo.service';
 import { Catalogo } from 'src/app/models/catalogo';
 import { ToastrService } from 'ngx-toastr';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-producto-list',
@@ -11,10 +12,18 @@ import { ToastrService } from 'ngx-toastr';
 export class ProductoListComponent implements OnInit {
 
   catalogoList:Catalogo[];
+  dtOptions: DataTables.Settings = {};
+  dtTrigger: Subject<any> = new Subject();
 
   constructor(private catalogoService:CatalogoService, private tostr:ToastrService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.dtOptions = {
+      pagingType: 'full_numbers',
+      pageLength: 5,
+      processing: true
+    };
+
     this.catalogoService.getProductos().snapshotChanges().subscribe(item=>{
       this.catalogoList=[];
       item.forEach(element => {
@@ -22,10 +31,12 @@ export class ProductoListComponent implements OnInit {
         x["$key"]=element.key;
         this.catalogoList.push(x as Catalogo);
       });
-      console.log(this.catalogoList)
+      this.dtTrigger.next();
     })
+   
+    
+    
   }
-
 
   onDelete($key:string){
     if(confirm("Estas seguro que vas a eliminar este producto?")){
@@ -36,5 +47,9 @@ export class ProductoListComponent implements OnInit {
 
   onEdit(producto:Catalogo){
     this.catalogoService.selectProducto=Object.assign({},producto);
+  }
+
+  ngOnDestroy(): void {
+    this.dtTrigger.unsubscribe();
   }
 }

@@ -11,6 +11,7 @@ import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 
 import { ChartsModule } from 'ng2-charts';
+import { DataTablesModule } from 'angular-datatables';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -44,6 +45,7 @@ import { ProductoListComponent } from './catalogo/producto-list/producto-list.co
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    DataTablesModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     CommonModule,
@@ -51,6 +53,7 @@ import { ProductoListComponent } from './catalogo/producto-list/producto-list.co
     ToastrModule.forRoot(), // ToastrModule added
     ChartsModule, //Libreria para jchart
     HttpClientModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

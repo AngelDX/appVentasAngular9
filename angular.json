@@ -25,14 +25,19 @@
             ],
             "styles": [
               "src/styles.css",
+              "node_modules/datatables.net-dt/css/jquery.dataTables.css",
               "node_modules/bootstrap/dist/css/bootstrap_lux.css",
-              "node_modules/ngx-toastr/toastr.css"
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/font-awesome/css/font-awesome.css"
+              
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
+              "node_modules/datatables.net/js/jquery.dataTables.js",
               "node_modules/popper.js/dist/popper2.js",
               "node_modules/bootstrap/dist/js/bootstrap.js",
               "node_modules/chart.js/dist/Chart.js"
+              
             ]
           },
           "configurations": {
