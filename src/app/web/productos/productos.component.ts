@@ -15,6 +15,7 @@ export class ProductosComponent implements OnInit {
 
   ngOnInit(): void {
     this.listarPokemons();
+    this.listarProductos();
   }
 
   listarProductos(){
@@ -29,7 +30,7 @@ export class ProductosComponent implements OnInit {
   listarPokemons(){
     this.rest
       .getpokedex().subscribe((data: object[]) => {
-        console.log(data);
+        //console.log(data);
         this.pokemons = data;
       });
   }

@@ -21,7 +21,8 @@ export class ProductoListComponent implements OnInit {
     this.dtOptions = {
       pagingType: 'full_numbers',
       pageLength: 5,
-      processing: true
+      processing: true,
+      retrieve:true
     };
 
     this.catalogoService.getProductos().snapshotChanges().subscribe(item=>{
