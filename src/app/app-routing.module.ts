@@ -7,6 +7,9 @@ import { AdministradorComponent } from './web/administrador/administrador.compon
 import { AuthGuard } from './guards/auth.guard';
 import { ProductosComponent } from './web/productos/productos.component';
 import { CatalogoComponent } from './catalogo/catalogo.component';
+import { HerosComponent } from './heros/heros.component';
+import { HeroListComponent } from './heros/hero-list/hero-list.component';
+import { HeroAddComponent } from './heros/hero-add/hero-add.component';
 
 
 const routes: Routes = [
@@ -15,6 +18,9 @@ const routes: Routes = [
   { path:'home',component:HomeComponent },
   { path:'productos',component:ProductosComponent },
   { path:'catalogo',component:CatalogoComponent },
+  { path:'heros',component:HerosComponent },
+  { path:'heroList',component:HeroListComponent },
+  { path:'heroAdd',component:HeroAddComponent },
   { path: 'administrador',component:AdministradorComponent,canActivate:[AuthGuard] }
 ];
 

@@ -1,0 +1,30 @@
+ 
+<div class="card mt-3">
+  <div class="card-body">
+      <h4 class="text-center">Registro de Heroes</h4>
+      <form #autorForm="ngForm" (ngSubmit)="onSubmit(autorForm)">
+          <input type="hidden" name="id" #id="ngModel" [(ngModel)]="heroService.selectHero.id">
+          <div class="form-group">
+            <input type="text" class="form-control" name="name" #name="ngModel"
+            [(ngModel)]="heroService.selectHero.name"
+              placeholder="Nombre">
+          </div>
+          <div class="form-group">
+              <input type="text" class="form-control" name="alias" #name="ngModel"
+              [(ngModel)]="heroService.selectHero.alias"
+               placeholder="Alias">
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary" type="submit">
+                <i class="fas fa-plus-circle"></i> Agregar
+            </button>
+            <button class="btn btn-secondary" type="reset" (click)="resetForm(autorForm)">
+                <i class="fas fa-sync-alt"></i> Resetear
+            </button>
+            <button class="btn btn-secondary" type="button" routerLink="/autoresList">
+              <i class="fas fa-hand-point-left"></i> Cancelar
+          </button>
+          </div>
+        </form>
+  </div>
+</div>

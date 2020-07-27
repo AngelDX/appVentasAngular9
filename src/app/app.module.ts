@@ -26,6 +26,9 @@ import { AdministradorComponent } from './web/administrador/administrador.compon
 import { CatalogoComponent } from './catalogo/catalogo.component';
 import { ProductoAddComponent } from './catalogo/producto-add/producto-add.component';
 import { ProductoListComponent } from './catalogo/producto-list/producto-list.component';
+import { HerosComponent } from './heros/heros.component';
+import { HeroAddComponent } from './heros/hero-add/hero-add.component';
+import { HeroListComponent } from './heros/hero-list/hero-list.component';
 
 
 @NgModule({
@@ -39,7 +42,10 @@ import { ProductoListComponent } from './catalogo/producto-list/producto-list.co
     AdministradorComponent,
     CatalogoComponent,
     ProductoAddComponent,
-    ProductoListComponent
+    ProductoListComponent,
+    HerosComponent,
+    HeroAddComponent,
+    HeroListComponent
   ],
   imports: [
     BrowserModule,
